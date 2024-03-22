@@ -56,8 +56,8 @@ export default function OnrampModal({ onrampUrl, onClose }: OnRampModalProps) {
                       </p>
                       <Image
                         src="/images/moonpay.svg"
-                        height="50px"
-                        width="200px"
+                        height="50"
+                        width="200"
                         alt="Moonpay Logo"
                       />
                     </Dialog.Title>

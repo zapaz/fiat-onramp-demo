@@ -59,6 +59,9 @@ export default async function handler(
   // Construct the onramp URL, prefilling in details about the flow
   // https://docs.moonpay.com/moonpay/implementation-guide/on-ramp/browser-integration/customize-the-widget
   let onrampUrl = new URL(MOONPAY_BASE_URL as string);
+
+  onrampUrl.searchParams.set("apiKey", process.env.MOONPAY_PUBLISHABLE_KEY as string);
+
   // Specify the user's wallet address
   onrampUrl.searchParams.set("walletAddress", address);
   // Specify the redirect URL once the user has completed the Moonpay flow.

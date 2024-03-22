@@ -33,12 +33,12 @@ export default function HomePage() {
   // Balance of embedded wallet
   const [balance, setBalance] = useState<string | undefined>(undefined);
 
-  // Method to get the user's Goerli ETH balance
+  // Method to get the user's Sepolia ETH balance
   const updateBalance = async () => {
     if (!user?.wallet?.address) return;
     try {
       const ethersProvider = new ethers.InfuraProvider(
-        "goerli",
+        "sepolia",
         process.env.NEXT_PUBLIC_INFURA_API_KEY
       );
       const balanceInWei = await ethersProvider.getBalance(user.wallet.address);
@@ -223,7 +223,7 @@ export default function HomePage() {
             <p className="mt-6 text-sm font-bold uppercase text-gray-600">
               My balance
             </p>
-            <p>{balance} Goerli ETH</p>
+            <p>{balance} Sepolia ETH</p>
 
             <p className="mt-6 text-sm font-bold uppercase text-gray-600">
               User object
